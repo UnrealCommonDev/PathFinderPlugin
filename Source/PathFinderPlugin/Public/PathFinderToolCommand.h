@@ -16,5 +16,7 @@ public:
 
 public:
 	TSharedPtr<FUICommandInfo> MenuCommand1;
+
+	//test
 };
 
