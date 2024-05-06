@@ -11,7 +11,7 @@ FPathFinderToolCommand::FPathFinderToolCommand()
 
 void FPathFinderToolCommand::RegisterCommands()
 {
-	UI_COMMAND(MenuCommand1, "Menu Command 1", "Test Menu Command 1.", EUserInterfaceActionType::Button, FInputChord());
+	UI_COMMAND(MenuCommand_GridManager, "그리드 관리", "", EUserInterfaceActionType::Button, FInputChord());
 }
 
 

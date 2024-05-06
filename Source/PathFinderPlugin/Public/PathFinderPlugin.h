@@ -7,7 +7,7 @@
 
 
 //----------------------------------------------
-// PathFinder ÇÃ·¯±×ÀÎ ¸ðµâ
+// PathFinder ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 //----------------------------------------------
 class FPathFinderPluginModule : public IModuleInterface
 {
@@ -18,16 +18,16 @@ public:
 
 public:
 	//--------------------------------------------------------
-	// UI ÀÌº¥Æ® Ã³¸®
+	// UI ï¿½Ìºï¿½Æ® Ã³ï¿½ï¿½
 	//--------------------------------------------------------
-	// Å¬¸¯ Ã³¸®
-	void OnClickMenuCommand1();
+	// Å¬ï¿½ï¿½ Ã³ï¿½ï¿½
+	void OnClickMenuCommand_GridManager();
 
-	// ¸Þ´º »ý¼º Ã³¸®
+	// ï¿½Þ´ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 	void OnMakeMenuBar(FMenuBarBuilder& menuBarBuilder);
 	void OnMakeAddFullDownMenu(FMenuBuilder& menuBuilder);
 
 protected:
-	// Ä¿¸Çµå ¸®½ºÆ®
+	// Ä¿ï¿½Çµï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
 	TSharedPtr<class FUICommandList> CommandList;
 };

@@ -12,14 +12,14 @@ void UPathFinderPluginUtil::DrawLoadedGridData(class MGridDataManager* inGridDat
 		return;
 	}
 
-	// ¸ÞÅ¸ Á¤º¸¸¦ ¾ò´Â´Ù
+	// ï¿½ï¿½Å¸ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â´ï¿½
 	MGridMetaData* metaData = inGridDataManager->GetGridMetaData();
 
-	// ³Ñ¾î¿Â ±×¸®µå µ¥ÀÌÅÍ º¤ÅÍ¸¦ ·çÇÁµ¹¸é¼­ 
+	// ï¿½Ñ¾ï¿½ï¿½ ï¿½×¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é¼­ 
 	if (std::vector<MGridData*>* gridDataContainer = inGridDataManager->GetLoadedGridDataContainer())
 	{
-		// ±×¸®µå µ¥ÀÌÅÍ°¡ Á¸ÀçÇÏ´ÂÁö(µ¥ÀÌÅÍ°¡ Á¸ÀçÇÏ´Â°æ¿ì Ãæµ¹Ã¼ Ãâ·Â)
-		// ¼öÁ¤ ÇÊ¿ä
+		// ï¿½×¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´Â°ï¿½ï¿½ ï¿½æµ¹Ã¼ ï¿½ï¿½ï¿½)
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½
 		//bool existData = false;
 
 		const int32 count = gridDataContainer->size();
@@ -47,7 +47,7 @@ void UPathFinderPluginUtil::DrawGridData(class MGridMetaData* inMetaData, class 
 
 	int32 gridSideSize = inMetaData->GetGridSideSize();
 
-	// ½ÃÀÛ À§Ä¡
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡
 	FVector startPos(inGridData->LeftTop.X, inGridData->LeftTop.Y, 0);
 
 	DrawLines(
@@ -68,7 +68,7 @@ void UPathFinderPluginUtil::DrawGridData(class MGridMetaData* inMetaData, class 
 		FLinearColor::Red);
 
 
-	// Å¸ÀÏÀ» ·çÇÁ¸¦ µ¹¸é¼­ Ãæµ¹ µÈ°÷À» »öÄ¥ÇÑ´Ù
+	// Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½é¼­ ï¿½æµ¹ ï¿½È°ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¥ï¿½Ñ´ï¿½
 	for (int32 y = 0; y < inMetaData->GridSideTileCount; ++y)
 	{
 		int32 startIndex = (y * inMetaData->GridSideTileCount);

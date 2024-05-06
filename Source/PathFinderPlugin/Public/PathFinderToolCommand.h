@@ -4,7 +4,7 @@
 
 
 //-----------------------------------------------------------
-// »ç¿ëÇÒ Ä¿¸Çµå
+// ï¿½ï¿½ï¿½ï¿½ï¿½ Ä¿ï¿½Çµï¿½
 //-----------------------------------------------------------
 class FPathFinderToolCommand : public TCommands<FPathFinderToolCommand>
 {
@@ -15,7 +15,7 @@ public:
 	virtual void RegisterCommands() override;
 
 public:
-	TSharedPtr<FUICommandInfo> MenuCommand1;
+	TSharedPtr<FUICommandInfo> MenuCommand_GridManager;
 
 	//test
 };

@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+ï»¿// Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "PathFinderPlugin.h"
 #include "PathFinderToolCommand.h"
@@ -17,16 +17,16 @@ void FPathFinderPluginModule::StartupModule()
 {
 	FPathFinderToolCommand::Register();
 
-	// Ä¿¸Çµå ¸®½ºÆ® »ý¼º
+	// Ä¿ï¿½Çµï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
 	CommandList = MakeShareable(new FUICommandList);
 
-	// Ä¿¸Çµå¸¦ µî·Ï
+	// Ä¿ï¿½Çµå¸¦ ï¿½ï¿½ï¿½
 	CommandList->MapAction(
-		FPathFinderToolCommand::Get().MenuCommand1,
-		FExecuteAction::CreateRaw(this, &FPathFinderPluginModule::OnClickMenuCommand1),
+		FPathFinderToolCommand::Get().MenuCommand_GridManager,
+		FExecuteAction::CreateRaw(this, &FPathFinderPluginModule::OnClickMenuCommand_GridManager),
 		FCanExecuteAction());
 
-	// FExtender »ý¼º
+	// FExtender ï¿½ï¿½ï¿½ï¿½
 	TSharedPtr<FExtender> menuExtender = MakeShareable(new FExtender());
 	menuExtender->AddMenuBarExtension(
 		"Window",
@@ -35,7 +35,7 @@ void FPathFinderPluginModule::StartupModule()
 		FMenuBarExtensionDelegate::CreateRaw(this, &FPathFinderPluginModule::OnMakeMenuBar));
 
 
-	// ·¹º§ ¿¡µðÅÍ¸¦ ¾ò¾î¿Í extender¸¦ µî·Ï
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ extenderï¿½ï¿½ ï¿½ï¿½ï¿½
 	FLevelEditorModule& levelEditorModule = FModuleManager::LoadModuleChecked<FLevelEditorModule>("LevelEditor");
 	levelEditorModule.GetMenuExtensibilityManager()->AddExtender(menuExtender);
 }
@@ -47,7 +47,7 @@ void FPathFinderPluginModule::ShutdownModule()
 	FPathFinderToolCommand::Unregister();
 }
 
-void FPathFinderPluginModule::OnClickMenuCommand1()
+void FPathFinderPluginModule::OnClickMenuCommand_GridManager()
 {
 	FString path = TEXT("/PathFinderPlugin/EUW_GridEditWidget.EUW_GridEditWidget");
 	UWidgetBlueprint* Blueprint = Cast<UWidgetBlueprint>(UEditorAssetLibrary::LoadAsset(path));
@@ -63,18 +63,16 @@ void FPathFinderPluginModule::OnClickMenuCommand1()
 void FPathFinderPluginModule::OnMakeMenuBar(FMenuBarBuilder& menuBarBuilder)
 {
 	menuBarBuilder.AddPullDownMenu(
-		FText::FromString("MyTools"),
-		FText::FromString(""),
-		FNewMenuDelegate::CreateRaw(this, &FPathFinderPluginModule::OnMakeAddFullDownMenu),
-		"MyTools",
-		FName(TEXT("MyTools"))
+		FText::FromString(TEXT("ê³µìš© íˆ´")),
+		FText::FromString(TEXT("")),
+		FNewMenuDelegate::CreateRaw(this, &FPathFinderPluginModule::OnMakeAddFullDownMenu)
 	);
 }
 
 void FPathFinderPluginModule::OnMakeAddFullDownMenu(FMenuBuilder& menuBuilder)
 {
-	menuBuilder.BeginSection("Section", FText::FromString("SectionTool"));
-	menuBuilder.AddMenuEntry(FPathFinderToolCommand::Get().MenuCommand1);
+	menuBuilder.BeginSection(TEXT(""), FText::FromString(TEXT("")));
+	menuBuilder.AddMenuEntry(FPathFinderToolCommand::Get().MenuCommand_GridManager);
 	menuBuilder.EndSection();
 }
 
